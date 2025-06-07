@@ -11,7 +11,14 @@ return {
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright" },
+        ensure_installed = {
+          "lua_ls",
+          "pyright",
+          "html",
+          "cssls",
+          "ts_ls", -- para Js/Ts
+          "tailwindcss",
+        },
         automatic_installation = true,
       })
     end,

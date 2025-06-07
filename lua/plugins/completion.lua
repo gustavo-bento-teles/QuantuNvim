@@ -10,7 +10,10 @@ return {
       "hrsh7th/vim-vsnip", -- snippet
       "rafamadriz/friendly-snippets", --snippet
       "windwp/nvim-autopairs", -- fecha parênteses
-      "hrsh7th/cmp-nvim-lsp-signature-help"
+      "windwp/nvim-ts-autotag", -- fecha tags
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "jose-elias-alvarez/null-ls.nvim", -- formatters/linter integration
+      "akinsho/toggleterm.nvim",
     },
     config = function()
       local cmp = require("cmp")
