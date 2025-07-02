@@ -8,24 +8,29 @@ return {
     },
 
     keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" }
+      { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Abrir a aba lateral do NvimTree" },
     },
 
     config = function()
       require("nvim-tree").setup({
+        update_focused_file = {
+          enable = true,
+        },
+
         hijack_directories = {
           enable = false,
         },
 
-        sync_root_with_cwd = true,
-        update_cwd = true,
-        respect_buf_cwd = true,
+        sync_root_with_cwd = false,
+        update_cwd = false,
+        respect_buf_cwd = false,
         
         filters = {
           dotfiles = false,
         },
 
         view = {
+          side = "right",
 	        width = 30,
 	      },
 

@@ -6,7 +6,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "gruvbox",
+        theme = "carbonfox",
         section_separators = "",
         component_separators = "",
         disabled_filetypes = {},

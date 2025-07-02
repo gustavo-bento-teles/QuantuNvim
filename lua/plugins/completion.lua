@@ -6,6 +6,7 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-cmdline",
       "onsails/lspkind.nvim",
       "hrsh7th/vim-vsnip", -- snippet
       "rafamadriz/friendly-snippets", --snippet
@@ -49,7 +50,61 @@ return {
           { name = "vsnip" },
         }),
         formatting = {
-          format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }),
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            with_text = true,
+            maxwidth = 50,
+            ellipsis_char = "...",
+            menu = {
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              path = "[Path]",
+              nvim_lua = "[Lua]",
+              vsnip = "[Snippet]",
+            },
+          }),
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+      })
+
+      -- Autocomplete no modo de comando e de busca
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "path" },
+          { name = "cmdline" },
+        },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            ellipsis_char = "...",
+          }),
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+      })
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" }
+        },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            ellipsis_char = "...",
+          }),
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
         },
       })
     end,

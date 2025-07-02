@@ -1,10 +1,21 @@
 return {
   {
-    "morhetz/gruvbox",
+    "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("gruvbox")
-    end
+      require("nightfox").setup({
+        options = {
+          transparet = false,
+          terminal_colors = true,
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          }
+        }
+      })
+      vim.cmd.colorscheme("carbonfox")
+    end,
   }
 }
