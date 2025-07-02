@@ -38,3 +38,8 @@ dashboard.section.buttons.val = {
 dashboard.section.footer.val = {
   "Distro desenvolvida por: Gustavo Bento"
 }
+
+local first_arg = vim.fn.argv(0)
+if first_arg and vim.fn.isdirectory(first_arg) == 1 then
+  vim.cmd("cd " .. first_arg)
+end

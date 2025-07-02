@@ -21,9 +21,9 @@ return {
           enable = false,
         },
 
-        sync_root_with_cwd = false,
-        update_cwd = false,
-        respect_buf_cwd = false,
+        sync_root_with_cwd = true,
+        update_cwd = true,
+        respect_buf_cwd = true,
         
         filters = {
           dotfiles = false,
