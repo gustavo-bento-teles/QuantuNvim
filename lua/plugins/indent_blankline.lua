@@ -3,6 +3,10 @@ return {
   main = "ibl",
   opts = {
     indent = { char = "|" },
-    scope = { enabled = true },
+    scope = {
+      enabled = true,
+      show_start = true,
+      highlight = "IblScope",
+    },
   },
 }
