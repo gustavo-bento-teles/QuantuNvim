@@ -18,6 +18,7 @@ return {
           "cssls",
           "ts_ls", -- para Js/Ts
           "tailwindcss",
+          "clangd"
         },
         automatic_installation = true,
       })
